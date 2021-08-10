@@ -52,7 +52,7 @@ function tweeter() {
 	console.log(tweet);	
 	T.post('statuses/update', { status: tweet }, function(err,data,res){
 		if(err){
-			console.log(error);
+			console.log(err);
 		} else {
 			console.log('Succsess: Tweeted ' + data.text);
 		}
@@ -63,19 +63,24 @@ function tweeter() {
 
 // Use for targeted specific keywords
 function liker(){
-	var keyWords = 'swiftcash, pivx, smartcash';
+	var keyWords = 'swiftcash, smartcash, pivx';
 	var stream = T.stream('statuses/filter', { track: keyWords });
 	stream.on('tweet', gotTweet);
 	function gotTweet(tweet){
-		T.post('favorites/create', { id: tweet.id_str }, function(err,data,res){
-			if(err){
+		if  (tweet.user.screen_name === 'SwiftCashFans') {
+			 console.log('I dont like my own tweets, its a bit vain');
+		   }  else {
+			  T.post('favorites/create', { id: tweet.id_str }, function(err,data,res){
+			    if(err){
 				console.log(err.message);
-			} else {
+			}   else {
 				console.log('Liked tweet: ' + tweet.id);
-			}
-		})
-	} 
-}
+			    }
+		   })
+		  }
+	    } 
+  }
+
 
 var queue = [];
 
