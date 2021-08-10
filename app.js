@@ -45,14 +45,18 @@ function tweeter() {
 		'The SwiftCash Lottery Jackpot currently stands at ' + jackpot + ' $SWIFT. The current HODL Deposit rate for 12 months is ' + rate + '% APR. Find out more at https://swiftcash.cc #SwiftCash #Bitcoin #Crypto #Blockchain',
 		'New ideas are always welcome at #SwiftCash, join our Discord https://discord.swiftcash.cc and you could get your idea funded #Bitcoin #DeFi #Crypto #Altcoin',
 		'Lock away your $SWIFT on chain for 1 - 12 months with HODL Deposits and receive your interest instantly on a time locked address #Blockchain #Bitcoin #SwiftCash #DeFi #Crypto',
-		'SwiftCash lottery is conducted entirly on-chain. The SwiftCash decentralized blockchain draws the winners and payouts the winners every 5000 blocks. Jackpot for this round is currently ' + jackpot + ' $SWIFT'
+		'SwiftCash lottery is conducted entirly on-chain. The SwiftCash decentralized blockchain draws the winners and payouts the winners every 5000 blocks. Jackpot for this round is currently ' + jackpot + ' $SWIFT',
+		'#SwiftCash is a decentralized, open-source project. Join our Discord server to find out more https://discord.swiftcash.cc #Bitcoin #Crypto Blockchain #Doge #LTE',
+		'HODL Depsosits are held on chain and only you have the keys to access them. No rug #DeFi, blockchain only #SwiftCash #Bitcoin #Crypto #Blockchain #Altcoin',
+		'You can play #SwiftCash lottery right from our open-source webwallet https://wallet.swiftcash.cc and you can play from as little as 0.01 $SWIFT per entry #Crypto #Altcoin #Finance #Lotto',
+		'You can create HODL Depsosits right from your #SwiftCash webwallet https://wallet.swiftcash.cc Enter the amount of $SWIFT you want to HODL and how long you want to hold it for then hit send. Done! #Bitcoin #DeFi #Altcoin #Crypto'
         ];
 		
 	var tweet = tweetsDB[Math.floor(Math.random() * tweetsDB.length)];
 	console.log(tweet);	
 	T.post('statuses/update', { status: tweet }, function(err,data,res){
 		if(err){
-			console.log(err);
+			console.log(err.message);
 		} else {
 			console.log('Succsess: Tweeted ' + data.text);
 		}
@@ -77,8 +81,8 @@ function liker(){
 				console.log('Liked tweet: ' + tweet.id);
 			    }
 		   })
-		  }
-	    } 
+		}
+	} 
   }
 
 
