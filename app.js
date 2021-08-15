@@ -67,7 +67,7 @@ function tweeter() {
 
 // Use for targeted specific keywords
 function liker(){
-	var keyWords = 'swiftcash, smartcash, dvt';
+	var keyWords = 'swiftcash, smartcash, devault';
 	var stream = T.stream('statuses/filter', { track: keyWords });
 	stream.on('tweet', gotTweet);
 	function gotTweet(tweet){
@@ -114,8 +114,8 @@ function ctLiker() {
 	}
 	
 
-var ctHashtag = '#Altcoin';
-var regex = /#Altcoin/;
+var ctHashtag = '#Cryptotrading';
+var regex = /#Cryptotrading/;
 
 var stream = T.stream('statuses/filter', { track: ctHashtag });
 stream.on('tweet', gotTweet);
