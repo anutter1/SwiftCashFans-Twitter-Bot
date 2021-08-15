@@ -12,13 +12,13 @@ var T = new Twit ({
 
 var swiftAPI ='https://explorer.swiftcash.cc/api/info';
 
-tweeter();
+
 liker();
 
 
 
 
-setInterval(tweeter, 1000*60*60*8);
+setInterval(tweeter, 1000*60*60*16);
 
 function tweeter() {
 	request(swiftAPI, gotData);
@@ -67,7 +67,7 @@ function tweeter() {
 
 // Use for targeted specific keywords
 function liker(){
-	var keyWords = 'swiftcash, smartcash, pivx';
+	var keyWords = 'swiftcash, smartcash, dvt';
 	var stream = T.stream('statuses/filter', { track: keyWords });
 	stream.on('tweet', gotTweet);
 	function gotTweet(tweet){
@@ -114,8 +114,8 @@ function ctLiker() {
 	}
 	
 
-var ctHashtag = '#Crypto';
-var regex = /#Crypto/;
+var ctHashtag = '#Altcoin';
+var regex = /#Altcoin/;
 
 var stream = T.stream('statuses/filter', { track: ctHashtag });
 stream.on('tweet', gotTweet);
