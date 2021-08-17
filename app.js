@@ -18,7 +18,7 @@ liker();
 
 
 
-setInterval(tweeter, 1000*60*60*16);
+setInterval(tweeter, 1000*60*60*10);
 
 function tweeter() {
 	request(swiftAPI, gotData);
@@ -67,7 +67,7 @@ function tweeter() {
 
 // Use for targeted specific keywords
 function liker(){
-	var keyWords = 'swiftcash, smartcash, devault';
+	var keyWords = 'swiftcash, smartcash';
 	var stream = T.stream('statuses/filter', { track: keyWords });
 	stream.on('tweet', gotTweet);
 	function gotTweet(tweet){
@@ -114,8 +114,8 @@ function ctLiker() {
 	}
 	
 
-var ctHashtag = '#Crypto';
-var regex = /#Crypto/;
+var ctHashtag = '#Doge';
+var regex = /#Doge/;
 
 var stream = T.stream('statuses/filter', { track: ctHashtag });
 stream.on('tweet', gotTweet);
