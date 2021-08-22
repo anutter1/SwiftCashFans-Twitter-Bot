@@ -114,8 +114,8 @@ function ctLiker() {
 	}
 	
 
-var ctHashtag = '#Doge';
-var regex = /#Doge/;
+var ctHashtag = '#Crypto';
+var regex = /#Crypto/;
 
 var stream = T.stream('statuses/filter', { track: ctHashtag });
 stream.on('tweet', gotTweet);
